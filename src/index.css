@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* AI-Inspired Design System - Modern Glassmorphism & Neon Effects 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Colors - Light Mode */
+    --background: 220 25% 95%;
+    --foreground: 220 25% 10%;
 
+    /* AI-Inspired Primary Colors */
+    --primary: 260 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 100% 75%;
+    
+    /* Secondary AI Colors */
+    --secondary: 200 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 200 100% 70%;
+
+    /* Surface Colors with Glassmorphism */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 10%;
+    --glass: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Interactive Elements */
+    --muted: 220 25% 90%;
+    --muted-foreground: 220 25% 40%;
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 25% 85%;
+    --input: 220 25% 90%;
+    --ring: 260 100% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Gradients */
+    --gradient-ai: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass)), hsl(0 0% 100% / 0.05));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.3), transparent 70%);
+    
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-glass: 0 8px 32px hsl(220 25% 10% / 0.1);
+    --shadow-neon: 0 0 20px hsl(var(--accent) / 0.5);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Border Radius */
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +72,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Base Colors - Dark Mode */
+    --background: 220 30% 5%;
+    --foreground: 220 25% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* AI-Inspired Primary Colors - Dark */
+    --primary: 260 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 100% 80%;
+    
+    /* Secondary AI Colors - Dark */
+    --secondary: 200 100% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 200 100% 75%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Surface Colors with Glassmorphism - Dark */
+    --card: 220 30% 8%;
+    --card-foreground: 220 25% 95%;
+    --glass: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Interactive Elements - Dark */
+    --muted: 220 30% 15%;
+    --muted-foreground: 220 25% 60%;
+    --accent: 280 100% 75%;
+    --accent-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* System Colors - Dark */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 30% 20%;
+    --input: 220 30% 12%;
+    --ring: 260 100% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Gradients - Dark */
+    --gradient-ai: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass)), hsl(0 0% 100% / 0.02));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.2), transparent 70%);
+    
+    /* Shadows & Effects - Dark */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-neon: 0 0 20px hsl(var(--accent) / 0.6);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +132,81 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Glass Effect Components */
+  .glass-card {
+    @apply backdrop-blur-xl bg-card/50 border border-glass-border shadow-glass;
+  }
+  
+  .glass-input {
+    @apply backdrop-blur-xl bg-glass border border-glass-border placeholder:text-muted-foreground;
+  }
+
+  /* AI-Inspired Button Variants */
+  .btn-ai {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-glow hover:shadow-neon transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-glass {
+    @apply backdrop-blur-xl bg-glass border border-glass-border hover:bg-glass/70 transition-all duration-300;
+  }
+
+  /* Glow Effects */
+  .glow-effect {
+    position: relative;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-ai);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .glow-effect:hover::before {
+    opacity: 1;
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse Glow Animation */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from { box-shadow: var(--shadow-glow); }
+    to { box-shadow: var(--shadow-neon); }
+  }
+
+  /* Smooth Image Fade In */
+  .image-fade-in {
+    animation: imageSlideUp 0.6s ease-out;
+  }
+  
+  @keyframes imageSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
